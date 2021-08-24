@@ -24,21 +24,18 @@ const App = (props) => {
         <Provider store={store}>
             <Router>
                 <div className="App">
-                    <Route path="/home" component={Home}/>
+                    <Route path="/home*" component={Home}/>
                     <h1>App</h1>
                     <Link to="/">App</Link>
                     <Link to="/home">Home</Link>
                     <Link to="/count">Count</Link>
                     <Link to="/com1">Com1</Link>
-                    <Link to="/com2">Com2</Link>
+                    <Link to="/com1/a">Com2</Link>
+                    {/* path="/", default route*/}
+                    <Route exact path="/" component={Home}/>
+                    {/*<Route path="/" component={Home}/>*/}
                     <Route path="/count" component={Count}/>
-                    <Route path="/home" component={Count}/>
-                    <Route path="/com1" component={Com1}>
-                        <Route path="/com1" component={Com2}/>
-                    </Route>
-                    <Route path="/com2" component={Com2}>
-                        <Route path="/com2" component={Com1}/>
-                    </Route>
+                    <Route path="/home/" component={Count}/>
                     {/*<button onClick={handleHome}>go home</button>*/}
                     {/*<button onClick={handleBack}>go back</button>*/}
                 </div>
